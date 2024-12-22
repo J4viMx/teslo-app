@@ -1,13 +1,7 @@
-import { QuantitySelector, Title } from "@/components";
-import { initialData } from "@/seed/seed";
-import Image from "next/image";
+import { Title } from "@/components";
 import Link from "next/link";
-
-const productsInCart = [
-  initialData.products[0],
-  initialData.products[1],
-  initialData.products[2],
-];
+import { ProductsInCart } from "./ui/ProductsInCart";
+import { OrderSummary } from "./ui/OrderSummary";
 
 export default function CartPage() {
   /* redirect('/empty') */
@@ -26,39 +20,14 @@ export default function CartPage() {
 
             {/* Items */}
 
-            {productsInCart.map((product) => (
-              <div key={product.slug} className="mb-5 flex">
-                <Image
-                  src={`/products/${product.images[0]}`}
-                  width={100}
-                  height={100}
-                  alt={product.title}
-                  className="mr-5 size-[100px] rounded"
-                />
-
-                <div className="">
-                  <p>{product.title}</p>
-                  <p>${product.price}</p>
-                  <QuantitySelector quantity={3} />
-                  <button className="mt-3 underline">Remover</button>
-                </div>
-              </div>
-            ))}
+            <ProductsInCart />
           </div>
 
           {/* Checkout - resumen de orden */}
           <div className="h-fit rounded-xl bg-white p-7 shadow-xl">
             <h2 className="mb-2 text-2xl">Resumen de orden</h2>
-            <div className="grid grid-cols-2">
-              <span>No. Productos</span>
-              <span className="text-right">3 articulos</span>
-              <span>Subtotal</span>
-              <span className="text-right">$100</span>
-              <span>Impuestos (15%)</span>
-              <span className="text-right">$100</span>
-              <span className="mt-5 text-2xl">Total: </span>
-              <span className="mt-5 text-right text-2xl">$100</span>
-            </div>
+
+            <OrderSummary />
 
             <div className="mb-2 mt-5 w-full">
               <Link
