@@ -119,21 +119,24 @@ export const Sidebar = () => {
             <div className="my-10 h-px w-full bg-gray-200"></div>
 
             <Link
-              href="/"
+              href="/admin/products"
+              onClick={() => closeMenu()}
               className="mt-10 flex items-center rounded p-2 transition-all hover:bg-gray-100"
             >
               <IoShirtOutline size={30} />
               <span className="ml-3 text-xl">Productos</span>
             </Link>
             <Link
-              href="/"
+              href="/admin/orders"
+              onClick={() => closeMenu()}
               className="mt-10 flex items-center rounded p-2 transition-all hover:bg-gray-100"
             >
               <IoTicketOutline size={30} />
               <span className="ml-3 text-xl">Ordenes</span>
             </Link>
             <Link
-              href="/"
+              href="/admin/users"
+              onClick={() => closeMenu()}
               className="mt-10 flex items-center rounded p-2 transition-all hover:bg-gray-100"
             >
               <IoPeopleOutline size={30} />

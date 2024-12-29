@@ -5,7 +5,12 @@ import bcryptjs from "bcryptjs";
 import prisma from "./lib/prisma";
 
 const authRoutes = ["/auth/login", "/auth/register"];
-const protectedRoutes = ["/profile", "/checkout/address"];
+const protectedRoutes = [
+  "/profile",
+  "/checkout/address",
+  "/admin/users",
+  "/admin/orders",
+];
 
 export const authConfig: NextAuthConfig = {
   pages: {
